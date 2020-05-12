@@ -1,4 +1,4 @@
-export const up = (queryInterface, Sequelize) => {
+const up = (queryInterface, Sequelize) => {
   return queryInterface.createTable('files', {
     id: {
       type: Sequelize.INTEGER,
@@ -24,8 +24,10 @@ export const up = (queryInterface, Sequelize) => {
       allowNull: false,
     },
   })
-},
+}
 
-export const down = queryInterface => {
+const down = queryInterface => {
   return queryInterface.dropTable('files')
 }
+
+export default { up, down }
